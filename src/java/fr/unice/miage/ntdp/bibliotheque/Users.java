@@ -6,6 +6,7 @@ package fr.unice.miage.ntdp.bibliotheque;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author edou
  */
 @Entity
+@DiscriminatorValue("USERS")
 @XmlRootElement
 public class Users extends Personne implements Serializable {
   private static final long serialVersionUID = 1L;

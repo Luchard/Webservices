@@ -6,6 +6,7 @@ package fr.unice.miage.ntdp.bibliotheque;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -43,7 +44,7 @@ public class Livre implements Serializable {
     private String titre; 
     private String resume; 
     private String isbn; 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Categorie categorie; 
     private int quantite; 
     private String photo;

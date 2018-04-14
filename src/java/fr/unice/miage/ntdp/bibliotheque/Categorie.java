@@ -6,6 +6,7 @@ package fr.unice.miage.ntdp.bibliotheque;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +23,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement	
 
 public class Categorie implements Serializable {
-    @OneToMany(mappedBy = "categorie")
+    @OneToMany(cascade= CascadeType.REMOVE ,mappedBy = "categorie")
     private List<Livre> livres;
     private static final long serialVersionUID = 1L;
     @Id
@@ -39,6 +40,15 @@ public class Categorie implements Serializable {
         this.id = id;
     }
 
+    public List<Livre> getLivres() {
+        return livres;
+    }
+
+    public void setLivres(List<Livre> livres) {
+        this.livres = livres;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

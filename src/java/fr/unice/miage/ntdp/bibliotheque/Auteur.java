@@ -7,6 +7,8 @@ package fr.unice.miage.ntdp.bibliotheque;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,10 +25,11 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author edou
  */
 @Entity
+@DiscriminatorValue("AUTEUR")
 @NamedQuery(name = "Auteur.findLikeNom", query = "SELECT a FROM Auteur a WHERE lower(a.nom) LIKE '%:nom%' or  lower(a.prenom) LIKE '%:prenom%'")
 @XmlRootElement
 public class Auteur extends Personne implements Serializable {
-    @OneToMany(mappedBy = "ecrit_par")
+    @OneToMany(mappedBy = "ecrit_par", cascade = CascadeType.ALL)
     private List<Livre> livres;
     private static final long serialVersionUID = 1L;
     @Id
@@ -42,6 +45,11 @@ public class Auteur extends Personne implements Serializable {
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
+    
+    public Auteur(){
+    super();
+    this.type = TypeAuteur.COAUTEUR;
+    }
 
     @Override
     public boolean equals(Object object) {
@@ -50,10 +58,7 @@ public class Auteur extends Personne implements Serializable {
             return false;
         }
         Auteur other = (Auteur) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
