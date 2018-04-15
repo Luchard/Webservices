@@ -70,6 +70,16 @@ public class LivreFacadeREST extends AbstractFacade<Livre> {
     }
     
     @GET
+    @Path("find/livre/{id_Categorie}/{id_auteur}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<Pret> findAllAuteurCategorie(@PathParam("id_auteur") Long id_auteur, @PathParam("id_Categorie") Long id) {
+        Query query = em.createNamedQuery("Livre.findByAuteurAndCategorie");
+        query.setParameter("auteurId", id_auteur);
+        query.setParameter("categorie",id);
+        return query.getResultList();
+    }
+    
+    @GET
     @Path("find/{nomlivre}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Livre> findByLivre(@PathParam("nomlivre") String nom) {

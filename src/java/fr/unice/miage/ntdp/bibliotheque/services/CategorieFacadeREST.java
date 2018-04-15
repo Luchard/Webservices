@@ -75,7 +75,9 @@ public class CategorieFacadeREST extends AbstractFacade<Categorie> {
         return query.getResultList();
     }
     
-      @GET
+    
+    
+    @GET
     @Path("find/pret/{id_Categorie}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Pret> findAllPret(@PathParam("id_Categorie") Long id) {
@@ -84,6 +86,14 @@ public class CategorieFacadeREST extends AbstractFacade<Categorie> {
         return query.getResultList();
     }
     
+     @GET
+    @Path("find/livre/{id_Categorie}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public List<Pret> findAllAuteurCategorie(@PathParam("id_Categorie") Long id) {
+        Query query = em.createNamedQuery("Livre.findByAuteurAndCategorie");
+        query.setParameter("categorieId",id);
+        return query.getResultList();
+    }
     @GET
     @Override
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})

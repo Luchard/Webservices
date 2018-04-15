@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Livre.findAll", query = "SELECT l FROM Livre l"),
     @NamedQuery(name = "Livre.findByCategory", query = "SELECT l FROM Livre l WHERE l.categorie.id = :categorie"),
     @NamedQuery(name = "Livre.findByAuteur", query = "SELECT l FROM Livre l WHERE l.ecrit_par.id = :auteurId"),
+    @NamedQuery(name = "Livre.findByAuteurAndCategorie", query = "SELECT l FROM Livre l where l.ecrit_par.id = :auteurId and l.categorie.id= :categorie"),
     @NamedQuery(name = "Livre.findLikeTitre", query = "SELECT l FROM Livre l WHERE lower(l.titre) LIKE :nom")
 })
 

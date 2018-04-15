@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -27,6 +28,14 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @DiscriminatorValue("AUTEUR")
 @NamedQuery(name = "Auteur.findLikeNom", query = "SELECT a FROM Auteur a WHERE lower(a.nom) LIKE '%:nom%' or  lower(a.prenom) LIKE '%:prenom%'")
+@NamedQueries({
+    @NamedQuery(name = "Pret.findAll", query = "SELECT p FROM Pret p"),
+    @NamedQuery(name = "Auteur.findByCategorie", query = "SELECT p FROM Auteur p WHERE p. =:categorieId"),
+    @NamedQuery(name = "Pret.findByAuteur", query = "SELECT p FROM Pret p WHERE p.livre.ecrit_par.id = :auteurId"),
+    @NamedQuery(name = "Pret.findByCategorie", query = "SELECT p FROM Pret p WHERE p.livre.categorie.id =:categorieId"),
+    @NamedQuery(name = "Pret.findByLibelle", query = "SELECT p FROM Pret p WHERE p.livre.titre like '%:categorieId%'")
+})
+
 @XmlRootElement
 public class Auteur extends Personne implements Serializable {
     @OneToMany(mappedBy = "ecrit_par", cascade = CascadeType.ALL)
