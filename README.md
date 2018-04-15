@@ -1,3 +1,4 @@
+# Project 2 - WebServices
 
 ## Histoires d'utilisateurs
 
@@ -12,6 +13,19 @@ ajouter les actions necessaires sur les différentes ressources.
 * [X] Lister tous les livres d'une catégorie.
 * [X] Lister tous les livres d'une catégorie et écrit par un auteur.
 
+* [X] Trouver un livre en fonction de son nom.
+* [X] Trouver un livre en fonction de son id.
+* [X] Trouver un livre en fonction de son auteur.
+* [X] Trouver un livre en fonction de sa catégorie.
+* [X] Trouver un livre en fonction d'un range d'ids.
+* [X] Trouver tous les livres
+
+
+* [X] Lister toutes les categories.
+* [X] Lister toutes les catégories en fonction de leur nom.
+
+
+
  
 
 
@@ -22,6 +36,7 @@ ajouter les actions necessaires sur les différentes ressources.
     Copyright [2018] [Luchard Max Sylmène]
 
     
+
 
 
 Web application for Miage NRDP
