@@ -25,6 +25,16 @@ ajouter les actions necessaires sur les différentes ressources.
 * [X] Lister toutes les catégories en fonction de leur nom.
 
 
+* [X] Supprimer une catégorie connaissant son id.
+* [X] Supprimer un auteur connaissant son id.
+* [X] Supprimer un prêt connaissant son id.
+* [X] Supprimer un livre connaissant son id.
+
+
+* [X] Modifier une catégorie connaissant son id.
+* [X] Modifier un auteur connaissant son id.
+* [X] Modifier un prêt connaissant son id.
+* [X] Modifier un livre connaissant son id.
 
  
 
@@ -36,7 +46,3 @@ ajouter les actions necessaires sur les différentes ressources.
     Copyright [2018] [Luchard Max Sylmène]
 
     
-
-
-
-Web application for Miage NRDP
