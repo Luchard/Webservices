@@ -1,0 +1,115 @@
+Les requêtes Postman permettant de tester les actions sur les différentes ressources 
+
+LISTE AUTEUR 
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.auteur
+
+LISTE CATEGORIE
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.categorie
+
+LISTE LIVRE
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.livre
+
+LISTE UTILISATEURS
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.users
+
+
+LISTE PRET
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.pret
+
+
+LISTE LIVRE PAR AUTEUR ET CATEGORIE
+http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/find/livre/{id_Categorie}/{id_auteur}
+
+
+LISTE TOUS LES LIVRES DE CETTE CATEGORIE
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.categorie/find/{id_Categorie}
+
+
+LISTER TOUS LES PRET D'UN LIVRE
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/find/pret/{id_livre}
+
+
+COMPTER LE NOMBRE DE LIVRE
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.livre/count
+
+
+COMPTER LE NOMBRE DE CATEGORIE
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.categorie/count
+
+
+COMPTER LE NOMBRE D' AUTEUR
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.auteur/count
+
+COMPTER LE NOMBRE DE PRET
+GET http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.pret/count
+
+AFFICHER UN LIVRE EN FONCTION DE SON NOM
+http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/find/{nomlivre}
+
+LISTER TOUS LES LIVRES DANS UN RANGE
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/{from}/{to}
+
+
+AFFICHER UN AUTEUR EN PASSANT PAR SON ID
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.auteur/{id}
+
+
+AFFICHER UN AUTEUR EN PASSANT PAR SON NOM
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.auteur/find/{nomauteur}
+
+
+LISTER TOUS LES PRETS DE LIVRES ECRIT PAR UN AUTEUR
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.auteur/pret/{id}
+
+
+LISTER TOUS LES LIVRES EN FONCTION DE LA CATEGORIE
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.categorie/find/livre/{id_Categorie}
+
+
+LISTER TOUS LES PRETS DE LIVRE D'UNE CATEGORIE
+GET http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.categorie/find/pret/{id_Categorie}
+
+
+MODIFIER UN LIVRE CONNAISSANT SON ID
+PUT http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/{id}
+
+MODIFIER UNE CATEGORIE CONNAISSANT SON ID
+PUT http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.categorie/{id}
+
+
+MODIFIER UN AUTEUR CONNAISSANT SON ID
+PUT http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.auteur/{id}
+
+MODIFIER UN PRET CONNAISSANT SON ID
+PUT http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.pret/{id}
+
+
+CREATION D'UN NOUVEL AUTEUR 
+POST http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.auteur
+
+CREATION D'UNE NOUVELLE CATEGORIE
+POST http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.categorie
+
+CREATION D'UN NOUVEAU LIVRE
+POST http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.livre
+
+CREATION D'UN NOUVEL UTILISATEUR
+POST http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.users
+
+
+CREATION D'UN NOUVEAU PRET
+POST http://localhost:8080/bibliotheque_ntdp-master/webresources/fr.unice.miage.ntdp.bibliotheque.pret
+
+
+SUPPRIMER UN LIVRE CONNAISSANT SON ID
+DELETE http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.livre/{id}
+
+SUPPRIMER UNE CATEGORIE CONNAISSANT SON ID
+DELETE http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.categorie/{id}
+
+
+SUPPRIMER UN AUTEUR CONNAISSANT SON ID
+DELETE http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.auteur/{id}
+
+SUPPRIMER UN PRET CONNAISSANT SON ID
+DELETE http://localhost:8080/bibliotheque_ntdp-master/fr.unice.miage.ntdp.bibliotheque.pret/{id}
